@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <form onsubmit="agregar()"> -->
+    <h1>Practica</h1>
+  <form id="forma" onsubmit="agregar()">
+    <div>
+      <label for="producto">Producto: </label>
+      <input type="text" name="producto" id="producto">
+    </div>
+    <br>
+    <div>
+      <label for="nombre">Nombre: </label>
+      <input type="text" name="nombre" id="nombre">
+    </div>
+    <br>
+    <div>
+      <label for="cantidad">Cantidad: </label>
+      <input type="number" name="cantidad" id="cantidad">
+    </div>
+    <br>
+    <div>
+      <label for="precio">Precio: </label>
+      <input type="number" name="precio" id="precio">
+    </div>
+    <br>
+
+  </form>
+  <button class="boton" onclick="agregar()">Guardar</button>
+  <button class="boton" onclick="calcular()">Calcular</button>
+  
+
+  <br>
+  <br>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+  <br>
+
+  <div>
+    <label for="subtotal">Subtotal: </label>
+    <input type="number" name="subtotal" id="subtotal" readonly>
+    <br>
+    <br>
+    <label for="total">Total: </label>
+    <input type="number" name="total" id="total" readonly>
+  </div>
+  <script src="app.js"></script>
+  <script src="productos.js"></script>
+</body>
+
+</html>
