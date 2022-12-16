@@ -10,34 +10,35 @@
 
 <body>
   <!-- <form onsubmit="agregar()"> -->
-    <h1>Practica</h1>
-  <form id="forma" onsubmit="agregar()">
+  <h1>Practica</h1>
+  <form id="forma" onsubmit="agregar(event)">
     <div>
       <label for="producto">ID del Producto: </label>
-      <input type="text" name="producto" id="producto">
+      <input type="text" name="producto" id="producto" required>
     </div>
     <br>
     <div>
       <label for="nombre">Nombre: </label>
-      <input type="text" name="nombre" id="nombre">
+      <input type="text" name="nombre" id="nombre" required>
     </div>
     <br>
     <div>
       <label for="cantidad">Cantidad: </label>
-      <input type="number" name="cantidad" id="cantidad">
+      <input type="number" name="cantidad" id="cantidad" required>
     </div>
     <br>
     <div>
       <label for="precio">Precio: </label>
-      <input type="number" name="precio" id="precio">
+      <input type="number" name="precio" id="precio" required>
     </div>
     <br>
-
+    <button class="boton">Guardar</button>
+    <br><br>
   </form>
-  <button class="boton" onclick="agregar()">Guardar</button>
+
   <button class="boton" onclick="calcular()">Calcular</button>
   <button class="boton" onclick="limpiar()">Eliminar todo</button>
-  
+
 
   <br>
   <br>

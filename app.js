@@ -36,7 +36,8 @@ function mostrarTodo(array) {
   }
 }
 
-function agregar() {
+function agregar(e) {
+  e.preventDefault();
   if (estaModificando) {
     const forma = document.forms['forma'];
     const producto = forma['producto'];
