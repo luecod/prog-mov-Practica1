@@ -9,16 +9,30 @@ function mostrar(pos) {
   // let _can = document.getElementById("cantidad").value;
   // let _pre = document.getElementById("precio").value;
 
-  let fila = "<tr><td>" + productos[pos].producto +
-    "</td><td>" + productos[pos].nombre +
-    "</td><td>" + productos[pos].cantidad +
-    "</td><td>" + productos[pos].precio +
-    "</td><td>" + `<button class="boton" id="botoncito" onclick="deleteRow(this)">Eliminar</button>` +
-    "</td><td>" + `<button class="boton" id="botoncito" onclick="modificar(this)">Modificar</button>` + "</td></tr>";
+  if (estaModificando) {
+    document.getElementById('myTable').remove
+    let fila = "<tr><td>" + productos[pos].producto +
+      "</td><td>" + productos[pos].nombre +
+      "</td><td>" + productos[pos].cantidad +
+      "</td><td>" + productos[pos].precio +
+      "</td><td>" + `<button class="boton" id="botoncito" onclick="deleteRow(this)">Eliminar</button>` +
+      "</td><td>" + `<button class="boton" id="botoncito" onclick="modificar(this)">Modificar</button>` + "</td></tr>";
 
-  let btn = document.createElement("TR");
-  btn.innerHTML = fila;
-  document.getElementById("myTable").appendChild(btn);
+    let btn = document.createElement("TR");
+    btn.innerHTML = fila;
+    document.getElementById("myTable").appendChild(btn);
+  } else {
+    let fila = "<tr><td>" + productos[pos].producto +
+      "</td><td>" + productos[pos].nombre +
+      "</td><td>" + productos[pos].cantidad +
+      "</td><td>" + productos[pos].precio +
+      "</td><td>" + `<button class="boton" id="botoncito" onclick="deleteRow(this)">Eliminar</button>` +
+      "</td><td>" + `<button class="boton" id="botoncito" onclick="modificar(this)">Modificar</button>` + "</td></tr>";
+
+    let btn = document.createElement("TR");
+    btn.innerHTML = fila;
+    document.getElementById("myTable").appendChild(btn);
+  }
 }
 
 function agregar() {
@@ -31,7 +45,7 @@ function agregar() {
     const product = new Producto(producto.value, nombre.value, cantidad.value, precio.value);
     productos[indiceFila] = product;
     // console.log(productos.length);
-    mostrar(productos.length - 1);
+    mostrar();
     document.getElementById('forma').reset();
 
     estaModificando = false;
@@ -78,7 +92,8 @@ function deleteRow(r) {
   table.removeChild(row);
 }
 
-function modificar(r) {
+function modificar(r
+  ) {
   let row = r.parentNode.parentNode;
   indiceFila = row.rowIndex - 1;
   let producto = productos[indiceFila];
