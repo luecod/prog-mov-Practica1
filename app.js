@@ -36,6 +36,11 @@ function mostrarTodo(array) {
   }
 }
 
+function enviar(e){
+  e.preventDefault();
+  agregar();
+}
+
 function agregar(e) {
   e.preventDefault();
   if (estaModificando) {
