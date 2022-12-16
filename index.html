@@ -13,7 +13,7 @@
     <h1>Practica</h1>
   <form id="forma" onsubmit="agregar()">
     <div>
-      <label for="producto">Producto: </label>
+      <label for="producto">ID del Producto: </label>
       <input type="text" name="producto" id="producto">
     </div>
     <br>
@@ -36,11 +36,12 @@
   </form>
   <button class="boton" onclick="agregar()">Guardar</button>
   <button class="boton" onclick="calcular()">Calcular</button>
+  <button class="boton" onclick="limpiar()">Eliminar todo</button>
   
 
   <br>
   <br>
-  <table border="1">
+  <table id="tabla" border="1">
     <thead>
       <tr>
         <th>Producto</th>
@@ -49,7 +50,7 @@
         <th>Precio</th>
       </tr>
     </thead>
-    <tbody id="myTable">
+    <tbody id="tablaCuerpo">
 
     </tbody>
   </table>
