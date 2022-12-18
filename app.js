@@ -2,11 +2,11 @@ let productos = [];
 let indiceFila = -1
 let estaModificando = false
 
-function limpiar () {
-    productos = []
-    document.getElementById("total").value = "";
-    document.getElementById("subtotal").value = "";
-    deleteAll()
+function limpiar() {
+  productos = []
+  document.getElementById("total").value = "";
+  document.getElementById("subtotal").value = "";
+  deleteAll()
 }
 
 function deleteAll() {
@@ -16,6 +16,7 @@ function deleteAll() {
   tabla.removeChild(filas)
   filas = document.createElement('tbody');
   filas.setAttribute('id', 'tablaCuerpo');
+  filas.setAttribute('class', 'table__body')
   document.getElementById('tabla').appendChild(filas)
 }
 
@@ -27,16 +28,16 @@ function mostrarTodo(array) {
       "</td><td>" + element.nombre +
       "</td><td>" + element.cantidad +
       "</td><td>" + element.precio +
-      "</td><td>" + `<button class="boton" id="botoncito" onclick="deleteRow(this)">Eliminar</button>` +
-      "</td><td>" + `<button class="boton" id="botoncito" onclick="modificar(this)">Modificar</button>` + "</td></tr>";
+      "</td><td>" +
+      `<button class="boton" id="botoncito" onclick="deleteRow(this)">Eliminar</button> <button class="boton" id="botoncito" onclick="modificar(this)">Modificar</button>` + "</td></tr>";
     btn = document.createElement("TR");
     btn.innerHTML = fila;
     document.getElementById("tablaCuerpo").appendChild(btn);
-    document.getElementById('forma').reset();
   }
+  document.getElementById('forma').reset();
 }
 
-function enviar(e){
+function enviar(e) {
   e.preventDefault();
   agregar();
 }
@@ -63,6 +64,7 @@ function agregar(e) {
   }
   mostrarTodo(productos)
   calcular()
+  document.getElementById('formaContainer').classList.toggle('form__oculto')
 }
 
 function calcular() {
@@ -104,4 +106,15 @@ function modificar(r) {
   document.getElementById("cantidad").value = producto.cantidad;
   document.getElementById("precio").value = producto.precio;
   estaModificando = true;
+  verFormulario();
+}
+
+function verFormulario() {
+  document.getElementById('formaContainer').classList.remove('form__oculto')
+}
+
+function canclarFormulario() {
+  document.getElementById('formaContainer').classList.toggle('form__oculto')
+  estaModificando = false;
+  document.getElementById('forma').reset();
 }

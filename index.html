@@ -6,68 +6,81 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
   <!-- <form onsubmit="agregar()"> -->
-  <h1>Practica</h1>
-  <form id="forma" onsubmit="agregar(event)">
-    <div>
-      <label for="producto">ID del Producto: </label>
-      <input type="text" name="producto" id="producto" required>
-    </div>
-    <br>
-    <div>
-      <label for="nombre">Nombre: </label>
-      <input type="text" name="nombre" id="nombre" required>
-    </div>
-    <br>
-    <div>
-      <label for="cantidad">Cantidad: </label>
-      <input type="number" name="cantidad" id="cantidad" required>
-    </div>
-    <br>
-    <div>
-      <label for="precio">Precio: </label>
-      <input type="number" name="precio" id="precio" required>
-    </div>
-    <br>
-    <button class="boton">Guardar</button>
+
+  <section id="formaContainer" class="form form__oculto">
+    <form id="forma" onsubmit="agregar(event)">
+      <h1>Formulario</h1>
+      <div>
+        <label for="producto">ID del Producto: </label> <br> <br>
+        <input class="controls" type="text" name="producto" placeholder="Escribe el ID" id="producto" required>
+      </div>
+      <br>
+      <div>
+        <label for="nombre">Nombre: </label> <br><br>
+        <input class="controls" type="text" name="nombre" placeholder="Escribe el Nombre" id="nombre" required>
+      </div>
+      <br>
+      <div>
+        <label for="cantidad">Cantidad: </label><br><br>
+        <input class="controls" type="number" name="cantidad" placeholder="Escribe la cantidad" id="cantidad" required>
+      </div>
+      <br>
+      <div>
+        <label for="precio">Precio: </label><br><br>
+        <input class="controls" type="number" name="precio" placeholder="Escribe el precio" id="precio" required>
+      </div>
+      <br>
+      <button class="boton">Guardar</button>
+      
+    </form>
+    <button class="boton" onclick="canclarFormulario()">Cancelar</button>
     <br><br>
-  </form>
+  </section>
 
-  <button class="boton" onclick="calcular()">Calcular</button>
-  <button class="boton" onclick="limpiar()">Eliminar todo</button>
-
-
-  <br>
-  <br>
-  <table id="tabla" border="1">
-    <thead>
-      <tr>
-        <th>Producto</th>
-        <th>Nombre</th>
-        <th>Cantidad</th>
-        <th>Precio</th>
-      </tr>
-    </thead>
-    <tbody id="tablaCuerpo">
-
-    </tbody>
-  </table>
-
-  <br>
-  <br>
-  <br>
-
-  <div>
-    <label for="subtotal">Subtotal: </label>
-    <input type="number" name="subtotal" id="subtotal" readonly>
+  <section class="table__container">
+    <div class="botones">
+      <button class="boton" onclick="verFormulario()">Añadir</button>
+      <button class="boton" onclick="limpiar()">Eliminar todo</button>
+    </div>
     <br>
     <br>
-    <label for="total">Total: </label>
-    <input type="number" name="total" id="total" readonly>
-  </div>
+    <table class="table" id="tabla" border="1" width="50%" cellspacing="0" cellpadding="8">
+      <thead class="table__encabezado">
+        <tr>
+          <th>Producto</th>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaCuerpo">
+
+      </tbody>
+    </table>
+
+    <br>
+
+
+    <div class="resultados">
+      <label for="subtotal"><b>Subtotal:</b></label>
+      <input class="controls" type="number" name="subtotal" id="subtotal" readonly>
+      <br>
+      <br>
+      <label for="total"><b>Total:</b> </label>
+      <input class="controls" type="number" name="total" id="total" readonly>
+    </div>
+  </section>
   <script src="app.js"></script>
   <script src="productos.js"></script>
 </body>

@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-image: url('fondo.jpg');
+  position: relative;
+}
+
+.form__oculto {
+  display: none;
+}
+
+.form {
+  width: 400px;
+  background: #24303c;
+  padding: 30px;
+  margin-top: 25px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+  justify-content: center;
+  position: absolute;
+  left: 35%;
+  /* display: none; */
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #1f53c5;
+  font-size: 18px;
+  color: white;
+}
+
+.form .boton {
+  width: 100%;
+  background-color: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 10px 0;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.table__container {
+  display: grid;
+  justify-items: center;
+
+}
+
+.table__container .boton{
+  /* width: 400px; */
+  /* background: #24303c; */
+  /* padding: 30px; */
+  /* margin-top: 25px; */
+  /* border-radius: 4px; */
+  color: white;
+  /* box-shadow: 7px 13px 37px #000; */
+  
+}
+
+.table{
+  margin: auto;
+}
+
+.table__encabezado {
+  padding: 8px;
+  background: linear-gradient(#f26626 50%, #e54e21 0);
+  color: white;
+}
+
+.resultados {
+  margin: auto;
+  width: 400px;
+  padding: 30px;
+  margin-top: 25px;
+  border-radius: 4px;
+  color: #24303c;
+  justify-content: center;
+}
+
+.botones{
+  margin-top: 20px;
+}
+
+.botones .boton{
+  width: 200px;
+  background-color: #1f53c5;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  color: white;
+  margin: 10px 0;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.table__container .boton {
+  /* width: 100px; */
+  background-color: #1f53c5;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  color: white;
+  /* margin: 10px 0; */
+  /* font-size: 16px; */
+  /* margin-bottom: 0px; */
+}
+.boton{
+  cursor: pointer;
+}
+
+.boton:hover{
+  filter: brightness(1.2);
+}
