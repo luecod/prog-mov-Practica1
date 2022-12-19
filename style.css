@@ -18,7 +18,7 @@ body {
   width: 400px;
   background: #24303c;
   padding: 30px;
-  margin-top: 25px;
+  margin-top: 5px;
   border-radius: 4px;
   color: white;
   box-shadow: 7px 13px 37px #000;
@@ -126,4 +126,8 @@ h1 {
 
 .boton:hover{
   filter: brightness(1.2);
+}
+
+.filas{
+  color: white;
 }

@@ -24,7 +24,7 @@ function mostrarTodo(array) {
   let fila, btn
   deleteAll()
   for (let element of array) {
-    fila = "<tr><td>" + element.producto +
+    fila = `<tr class="filas"><td>` + element.producto +
       "</td><td>" + element.nombre +
       "</td><td>" + element.cantidad +
       "</td><td>" + element.precio +
